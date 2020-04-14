@@ -15,6 +15,7 @@ class ProgressBar extends StatefulWidget {
   final ChangeProgressHandler changeProgressHandler;
   final TapProgressHandler tapProgressHandler;
   final double progressFlex;
+  final double height;
 
   const ProgressBar({
     Key key,
@@ -27,6 +28,7 @@ class ProgressBar extends StatefulWidget {
     this.changeProgressHandler,
     this.tapProgressHandler,
     this.progressFlex = 0.6,
+    this.height = 1.5,
   }) : super(key: key);
 
   @override
@@ -114,6 +116,7 @@ class _ProgressBarState extends State<ProgressBar> {
     return Expanded(
       flex: (flex * 1000).toInt(),
       child: Container(
+        height: widget.height,
         color: color,
       ),
     );
